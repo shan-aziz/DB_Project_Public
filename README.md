@@ -20,9 +20,7 @@
 6.  [Prerequisites](#prerequisites)
 7.  [Setup and Installation](#setup-and-installation)
 8.  [Running the Application](#running-the-application)
-9.  [Screenshots](#screenshots)
-10. [Future Work](#future-work)
-11. [Report Reference](#report-reference)
+9. [Report Reference](#report-reference)
 
 ---
 
