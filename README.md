@@ -70,17 +70,22 @@ A significant focus of this project was the database design:
 
 ## Project Structure
 
+
+```text
 .
-├── app.py # Main Flask application file
-├── constants.py # Defines constants (ADMIN, CUS, SUP, etc.)
-├── db.yaml # Database configuration (user needs to create this)
-├── requirements.txt # Python package dependencies
-├── static/ # Optional: For CSS, JS, images
-└── templates/ # HTML templates rendered by Flask
-├── index.html # Login page
-├── register.html # Registration page
-├── admin_home.html # Admin dashboard
-└── ... (other templates for different user roles and pages)
+|-- app.py            # Main Flask application file
+|-- constants.py      # Defines constants (ADMIN, CUS, SUP, etc.)
+|-- db.yaml           # Database configuration (user needs to create this)
+|-- requirements.txt  # Python package dependencies
+|-- static/           # Optional: For CSS, JS, images
+|   `-- ...           # (Subdirectories/files for static assets)
+`-- templates/        # HTML templates rendered by Flask
+    |-- index.html    # Login page
+    |-- register.html # Registration page
+    |-- admin_home.html # Admin dashboard
+    `-- ...           # (Other templates for different user roles and pages)
+
+```
 ---
 
 ## Prerequisites
