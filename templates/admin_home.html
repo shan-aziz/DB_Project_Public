@@ -1,0 +1,48 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<head>
+    <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='../static/script.js'></script>
+</head>
+<center><h2>Welcome Admin, {{ username }}!</h2> <br></center>
+
+{% if msg %}
+<h7> {{msg}}</h7> <br>
+{% endif %}
+
+<i class="fa fa-search" aria-hidden="true"></i>
+<a href="{{ url_for('add_supplier')}}" class="btn btn-light pull-right" style="float: right;"><i class="fa fa-plus" aria-hidden="true"></i> Add Supplier</a>
+<input type="text" id="myInput" placeholder="Search for names.." onkeyup="searchFunction()">
+<table id ="myTable">
+    <tr class ="heading">
+        <th> Supplier Name </th>
+        <th> Product </th>
+        <th> Phone number</th>
+        <th> Update </th>
+        <th> Approval </th>
+        {% for sup in supplier_records%}
+    <tr>
+       
+        <td>{{sup.Fname}} {{sup.Lname}}</td>
+        <td>{{sup.product}}</td>
+        <td>{{doc.Phone_number}}</td>
+        <td>
+            <a href="{{ url_for('edit_doctor', doctor_id = doc.Doctor_ID) }}" class="btn btn-info pull-right">UPDATE</a>
+        </td>
+        <td>
+            {%if sup.Approved == 0 %}
+            <a href="approve/{{doc.Doctor_ID}}" class="btn btn-success pull-right">APPROVE</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tr>
+
+</table>
+
+{% endblock %}

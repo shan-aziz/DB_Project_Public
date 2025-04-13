@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Register</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<script type='text/javascript' src='../static/script.js'></script>
+	<script type="text/javascript" src="jquery-ui-1.10.0/tests/jquery-1.9.0.js"></script>
+	<script src="jquery-ui-1.10.0/ui/jquery-ui.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+	<div class="register">
+		<h1>Register</h1>
+		<div class="links">
+			<a href="{{ url_for('login') }}">Login</a>
+			<a href="{{ url_for('register') }}" class="active">Register</a>
+		</div>
+		<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+			<div class="row">
+				<div class="col-md-4">
+					<label for="fname"> <i class="fas fa-user"></i></label>
+					<input type="text" name="fname" placeholder="First Name" id="fname" required>
+				</div> &nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="lname"> <i class="fas fa-user"></i></label>
+					<input type="text" name="lname" placeholder="Last Name" id="lname" required>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="address"><i class="fas fa-address-card"></i></label>
+					<input type="text" name="address" placeholder="Address" id="address" required>
+				</div>
+				&nbsp;&nbsp; &nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="state"><i class="fas fa-city"></i></label>
+					<input type="text" name="state" placeholder="State" id="state" required>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="city"><i class="fas fa-city"></i></label>
+					<input type="text" name="city" placeholder="City" id="city" required>
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="email"> <i class="fas fa-envelope"></i> </label>
+					<input type="email" name="email" placeholder="Email" id="email" required>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="phonenumber"> <i class="fas fa-phone"></i> </label>
+					<input type="text" name="phonenumber" placeholder="Phone number" id="phonenumber" required>
+
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="ssn"> <i class="fas fa-id-card"></i> </label>
+					<input type="text" name="ssn" placeholder="SSN" id="ssn" optional>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="username"> <i class="fas fa-user"></i> </label>
+					<input type="text" name="username" placeholder="Username" id="username" required>
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="password"> <i class="fas fa-lock"></i> </label>
+					<input type="password" name="password" placeholder="Password" id="password" required>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="gender"> <i class="fas fa-male"></i> </label>
+					<select type="Choose" name="gender" id="gender" required>
+						<option>Choose Gender</option>
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select>
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="col-md-4">
+					<label for="dob"> <i class="fas fa-calendar" aria-hidden="true"></i></label>
+					<input type="date" name="dob" placeholder="Date of Birth" id="dob" required>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-4">
+					<label for="usertype"> <i class="fas fa-user"></i> </label>
+					<select type="Choose" name="usertype" id="usertype" required onchange="dummyFunc()">
+						<option>Choose User Type</option>
+						<option value="Admin">Admin</option>
+						<option value="Customer">Customer</option>
+						<option value="Supplier">Supplier</option>
+					</select>
+				</div>&nbsp;&nbsp;&nbsp;&nbsp;
+	
+			</div>
+
+
+
+
+			<div class="msg">{{ msg }}</div>
+			<input type="submit" value="Register">
+		</form>
+	</div>
+</body>
+
+</html>
